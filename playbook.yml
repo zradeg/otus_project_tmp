@@ -1,0 +1,64 @@
+---
+- hosts: all
+  become: yes
+  roles:
+    - base_options
+
+- hosts: nxg01
+  become: yes
+  roles:
+    - ngx
+    - ngx01
+    
+- hosts: nxg02
+  become: yes
+  roles:
+    - ngx
+    - ngx02
+    
+- hosts: postfix01
+  become: yes
+  roles:
+    - postfix
+    - postfix01
+    
+- hosts: postfix02
+  become: yes
+  roles:
+    - postfix
+    - postfix02
+    
+- hosts: postfix03
+  become: yes
+  roles:
+    - postfix
+    - postfix03
+    
+- hosts: proxysql01
+  become: yes
+  roles:
+    - postfix
+    - proxysql01
+    
+- hosts: pxc1
+  become: yes
+  roles:
+    - pxc
+    - pxc1
+    
+- hosts: pxc2
+  become: yes
+  roles:
+    - pxc
+    - pxc2
+    
+- hosts: pxc3
+  become: yes
+  roles:
+    - pxc
+    - pxc3
+
+- hosts: backup
+  become: yes
+  roles:
+    - backup
